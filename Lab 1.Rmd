@@ -37,9 +37,10 @@ We can conclude that the sample mean gets closer to the true mean as the sample 
 
 ```{r}
 set.seed(1)
-X <- runif(1000, min = -1, max = 1)
-hist(X)
-curve(runif(x, min = -1, max = 1), col = 'red', n =100, add = T)
+n = 100
+rows = 1000
+X <- matrix(runif(n*rows, -1, 1), rows)
+hist(rowMeans(X))
 ```
 
 sampling distribution of the sampling means approaches a normal distribution
@@ -47,12 +48,16 @@ sampling distribution of the sampling means approaches a normal distribution
 -   Question 4
 
 ```{r}
-uspop_sqrt = sqrt(uspop)
+uspop <- scan('uspop.txt')
 
-plot(uspop, main = "uspop data", xlab = "Year",
-     ylab = "U.S. Population (millions)")
-plot(uspop_sqrt, main = "uspop data", xlab = "Year",
-     ylab = "U.S. Population (millions)")
+plot(uspop/1000000, xaxt = 'n', type = 'o', main = "uspop data", wd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
+axis(1, seq(1,21,2), seq(1970,1990,2))
+     
+uspop_sqrt <- sqrt(uspop/1000000)
+
+plot(uspop_sqrt, xaxt = 'n', type = 'o', main = "uspop data", 
+     wd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
+axis(1, seq(1,21,2), seq(1970,1990,2))
 
 ```
 
