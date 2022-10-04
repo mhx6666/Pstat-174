@@ -50,13 +50,13 @@ sampling distribution of the sampling means approaches a normal distribution
 ```{r}
 uspop <- scan('uspop.txt')
 
-plot(uspop/1000000, xaxt = 'n', type = 'o', main = "uspop data", wd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
+plot(uspop/1000000, xaxt = 'n', type = 'o', main = "uspop data", lwd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
 axis(1, seq(1,21,2), seq(1970,1990,2))
      
 uspop_sqrt <- sqrt(uspop/1000000)
 
 plot(uspop_sqrt, xaxt = 'n', type = 'o', main = "uspop data", 
-     wd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
+     lwd = 2, xlab = "Year", ylab = "U.S. Population (millions)")
 axis(1, seq(1,21,2), seq(1970,1990,2))
 
 ```
