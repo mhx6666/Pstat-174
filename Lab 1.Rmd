@@ -3,8 +3,8 @@ title: "Pstat 174-Lab 1"
 author: "Hongxu Ma"
 date: '2022-10-03'
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 -   Question 1
