@@ -1,0 +1,59 @@
+---
+title: "Pstat 174-Lab 1"
+author: "Hongxu Ma"
+date: '2022-10-03'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+-   Question 1
+
+```{r setup, include=T}
+set.seed(1)
+X=runif(1000,-1,1)
+Y=X^2
+cor(X,Y)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+They are uncorrelated since correlation of X and Y is 0.04042929. They are not independent because there is quadratic relationship between X and Y. They are uncorrelated if X and Y are independent We can't conclude that they are independent or not if X and Y are uncorrelated.
+
+-   Question 2
+
+```{r}
+set.seed(1)
+x1 = runif(10, min = -1, max = 1)
+mean(x1)
+x2 = runif(100, min = -1, max = 1)
+mean(x2)
+x3 = runif(1000, min = -1, max = 1)
+mean(x3)
+```
+
+We can conclude that the sample mean gets closer to the true mean as the sample size increases.
+
+-   Question 3
+
+```{r}
+set.seed(1)
+X <- runif(1000, min = -1, max = 1)
+hist(X)
+curve(runif(x, min = -1, max = 1), col = 'red', n =100, add = T)
+```
+
+sampling distribution of the sampling means approaches a normal distribution
+
+-   Question 4
+
+```{r}
+uspop_sqrt = sqrt(uspop)
+
+plot(uspop, main = "uspop data", xlab = "Year",
+     ylab = "U.S. Population (millions)")
+plot(uspop_sqrt, main = "uspop data", xlab = "Year",
+     ylab = "U.S. Population (millions)")
+
+```
+
+The image of the second graph tends to be more linear, which means that the slope grows more smoothly.
