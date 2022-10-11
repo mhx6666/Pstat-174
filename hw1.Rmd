@@ -1,0 +1,38 @@
+---
+title: "HW1"
+author: "Hongxu Ma"
+date: '2022-10-04'
+output: pdf_document
+---
+Question 4
+```{r, include=T}
+polyroot(c(1,-2))
+polyroot(c(1,-0.45,-0.05))
+```
+
+Question 6
+```{r, out.width='80%',out.height='80%'}
+set.seed(123)
+Z = rnorm(300)
+plot(Z, type = 'l', main = "White Noise for Series Z")
+acf(Z)
+```
+
+```{r, out.width='80%',out.height='80%'}
+set.seed(123)
+Z = rnorm(300)
+Y = Z^2
+plot(Y, type = 'l', main = "White Noise for Series Y")
+acf(Y)
+
+Box.test(Y, type="Ljung-Box")
+```
+
+Since graphs shows no obvious trend as function of timeline and they have constant mean, series z and y are both stationary.
+
+There is no noticeable difference between them. Since we have Y = Zt^2, mean of Y cannot be zero.
+
+No, Y is white noise sequence, because lag values are under the boundary and only auto-correlation = 1 when lag is 0.
+
+
+
